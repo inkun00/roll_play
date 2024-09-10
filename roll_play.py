@@ -78,7 +78,7 @@ completion_executor = CompletionExecutor(
 )
 
 # Set the title of the Streamlit app
-st.markdown('<h1 class="title">학습 도움 챗봇</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="title">역할놀이 챗봇</h1>', unsafe_allow_html=True)
 
 # Add radio buttons for grade levels with a default value
 grade_level = st.radio(
@@ -187,7 +187,7 @@ st.markdown(f'''
         max-width: 80%;
         float: left;
         clear: both;">
-        어떤 주제로 이야기를 나눠볼까요?
+        어떤 역할로 대화를 해볼까요?
     </div>''', unsafe_allow_html=True)
 
 # Display the chat history (excluding the first initial instruction and specific messages)
@@ -225,7 +225,7 @@ for message in st.session_state.chat_history[3:]:  # Index 3부터 출력 (초�
 with st.form(key="input_form", clear_on_submit=True):
     cols = st.columns([4, 1, 1])  # 비율을 설정하여 열을 나눔
     with cols[0]:
-        user_message = st.text_input("학습하면서 궁금한 주제에 관해서 이야기를 나눠보세요:", key="input_message", placeholder="")
+        user_message = st.text_input("역할을 정해서 대화를 나눠보세요:", key="input_message", placeholder="")
     with cols[1]:
         submit_button = st.form_submit_button(label="입력", on_click=send_message)
     with cols[2]:
